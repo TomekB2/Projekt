@@ -1,0 +1,7 @@
+<html>
+<form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+  <h1>{{ section2 }}</h1>
+  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+</form>
+</html>

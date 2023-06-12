@@ -1,0 +1,42 @@
+<html>
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="container mb-4 mt-4">
+      <div class="row">
+        <div class="col-9"></div>
+        <div class="col-3">
+          <select #value class="custom-select" (change)="changeLang(value.value)">
+            <option value="en">Wybierz jezyk/Select language</option>
+            <option value="en">English</option>
+            <option value="pl">Polski</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">Projekt</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
+
+        <ul class="navbar-nav flex-grow" *ngFor="let section of sections">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/section', section.id]">{{ section.summary }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+</html>
