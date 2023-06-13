@@ -44,7 +44,7 @@ export class SectionComponent {
   onSubmit(model: any) {
     if (this.form.valid) {
       if (this.id == 2) {
-        this.link = 'http://localhost:5069/' + 'Alkohol?gesPocza=' + this.form.get('gesPocza')?.getRawValue() + '&geskon=' + this.form.get('geskon')?.getRawValue();
+        this.link = this.baseUrl + 'Alkohol?gesPocza=' + this.form.get('gesPocza')?.getRawValue() + '&geskon=' + this.form.get('geskon')?.getRawValue();
         this.http.post<Alkohol>(this.link, null).subscribe(data => {
           this.wynik2 = data.wynik;
           this.pageField = this.form.get('wynik');
@@ -52,7 +52,7 @@ export class SectionComponent {
         });
         }
         if (this.id == 1) {
-          this.link = 'http://localhost:5069/' + 'Nagazowanie?temp=' + this.form.get('temppiwa')?.getRawValue() + '&co=' + this.form.get('pozCO')?.getRawValue() + '&ilo=' + this.form.get('ilPiwa')?.getRawValue();
+          this.link = this.baseUrl + 'Nagazowanie?temp=' + this.form.get('temppiwa')?.getRawValue() + '&co=' + this.form.get('pozCO')?.getRawValue() + '&ilo=' + this.form.get('ilPiwa')?.getRawValue();
           this.http.post<Nagazowanie>(this.link, null).subscribe(data => {
             this.wynik2 = data.wynik;
             this.pageField = this.form.get('wynik');
@@ -60,7 +60,7 @@ export class SectionComponent {
           });
         }
         if (this.id == 3) {
-          this.link = 'http://localhost:5069/' + 'Refraktometr?gesPocza=' + this.form.get('gesPocz')?.getRawValue() + '&gezmie=' + this.form.get('zmigest')?.getRawValue()
+          this.link = this.baseUrl + 'Refraktometr?gesPocza=' + this.form.get('gesPocz')?.getRawValue() + '&gezmie=' + this.form.get('zmigest')?.getRawValue()
           this.http.post<Refraktometr>(this.link, null).subscribe(data => {
             this.wynik2 = data.wynik;
             this.pageField = this.form.get('wynik');

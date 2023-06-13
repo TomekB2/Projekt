@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { AppComponent } from '../app.component';
 
 
@@ -15,11 +15,11 @@ export class HomeComponent {
   cookies: any;
   http: any;
 
-  constructor(http: HttpClient, public lanng: AppComponent) {
-    http.get<MOTD>(this.ROOT_URL + 'MOTD?lang=' + this.lang).subscribe(result2 => {
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, public lanng: AppComponent) {
+    http.get<MOTD>(baseUrl + 'MOTD?lang=' + this.lang).subscribe(result2 => {
       this.message = result2;
     }, error => console.error(error));
-    http.get<Cookies>(this.ROOT_URL + 'Cookies?lang=' + this.lang).subscribe(result => {
+    http.get<Cookies>(baseUrl + 'Cookies?lang=' + this.lang).subscribe(result => {
       this.cookies = result;
         let cc = window as any;
         cc.cookieconsent.initialise({
