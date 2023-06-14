@@ -13,9 +13,9 @@ namespace ProjektAPI.Controllers
             _logger = logger;
         }
 
-        private static readonly string labelilo = "Iloœæ pakowanego piwa";
+        private static readonly string labelilo = "Ilosc pakowanego piwa";
         private static readonly string labelilo2 = "Volume of beer";
-        private static readonly string placeholderilo = "Podaj Iloœæ pakowanego piwa"; 
+        private static readonly string placeholderilo = "Podaj Ilosc pakowanego piwa"; 
         private static readonly string placeholderilo2 = "Enter volume of beer";
         private static readonly string labelco = "Poziom CO2";
         private static readonly string labelco2 = "Level of CO2";

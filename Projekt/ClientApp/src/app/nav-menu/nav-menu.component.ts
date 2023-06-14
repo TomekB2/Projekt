@@ -48,7 +48,7 @@ export class NavMenuComponent {
   changeLang(lang2: any)
   {
     localStorage.setItem('lang', lang2);
-    window.location.reload(); 
+    window.location = window.location;
   }
 }
 
